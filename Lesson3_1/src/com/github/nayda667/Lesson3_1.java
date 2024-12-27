@@ -1,8 +1,12 @@
-package com.gitgub.nayda667;
+package com.github.nayda667;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
-public class Main {
+public class Lesson3_1 {
 
     static List<String> numbers = new ArrayList<>();
     static List<String> strings = new LinkedList<>();
@@ -45,11 +49,15 @@ public class Main {
     public static String concatenateWords(String sentence) {
         String[] words = sentence.split(" ");
         StringBuilder result = new StringBuilder();
-        for (String word : words) {
-            String firstLetter = word.substring(0, 1);
-            firstLetter = firstLetter.toUpperCase();
-            result.append(firstLetter + word.substring(1)).append(" ");
-            //подумать как избавиться от лишнего пробела;(
+
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i];
+            String firstLetter = word.substring(0, 1).toUpperCase();
+            result.append(firstLetter).append(word.substring(1));
+
+            if (i != words.length - 1) {
+                result.append(" ");
+            }
         }
         return result.toString();
     }
